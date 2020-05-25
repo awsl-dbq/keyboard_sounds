@@ -117,3 +117,9 @@
   g++ tech-unwrap.cpp -o xmain.exe -DSFML_STATIC -I [include path] -L [lib path] -lsfml-graphics-s -lsfml-window-s -lsfml-audio-s -lsfml-system-s -lopengl32 -lwinmm -lgdi32 -lfreetype -ljpeg -lopenal32 -lflac -lvorbisenc -lvorbisfile -lvorbis -logg
   ```
 * According to unknown reason, openal32.dll still need to be included to run.
+
+## Linux Build
+```
+sudo apt-get install libsfml-dev
+g++ tech-unwrap.cpp -o sfml-app -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+```

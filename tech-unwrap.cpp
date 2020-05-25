@@ -723,6 +723,11 @@ void exit_program(sf::Sound &exit_sound)
 
 int main()
 {
+
+  if (fork() > 0) {
+    // 父进程退出
+    exit(0);
+  }
   bool load_media_status = true;
   init_sound_pool();
   sf::SoundBuffer alt_sound_buffer;
@@ -1686,7 +1691,7 @@ int main()
       }
       x_counter_obj.tilde_d = 0;
     }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Hyphen))
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Subtract))
     {
       if (x_counter_obj.hyphen_d <= 2 && x_counter_obj.hyphen_d >= 0)
       {
@@ -1955,7 +1960,7 @@ int main()
       }
       x_counter_obj.alt_d = 0;
     }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Backspace))
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::BackSpace))
     {
       if (x_counter_obj.backspace_d <= 2 && x_counter_obj.backspace_d >= 0)
       {
@@ -2123,7 +2128,7 @@ int main()
       }
       x_counter_obj.delete_d = 0;
     }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
     {
       if (x_counter_obj.enter_d <= 2 && x_counter_obj.enter_d >= 0)
       {
@@ -2165,7 +2170,7 @@ int main()
       }
       x_counter_obj.quotation_mark_d = 0;
     }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Semicolon))
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::SemiColon))
     {
       if (x_counter_obj.semicolon_d <= 2 && x_counter_obj.semicolon_d >= 0)
       {
@@ -2202,7 +2207,7 @@ int main()
       }
       x_counter_obj.shift_d = 0;
     }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Slash) || sf::Keyboard::isKeyPressed(sf::Keyboard::Backslash))
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Slash) || sf::Keyboard::isKeyPressed(sf::Keyboard::BackSlash))
     {
       if (x_counter_obj.splash_d <= 2 && x_counter_obj.splash_d >= 0)
       {
